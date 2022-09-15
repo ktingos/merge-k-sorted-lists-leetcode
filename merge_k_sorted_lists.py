@@ -29,14 +29,14 @@ def merge_two_lists(lst1, lst2):
 
     while lst1 and lst2:
         if lst1.val < lst2.val:
-            pointer.next = list1
+            pointer.next = lst1
             lst1 = lst1.next
         else:
-            pointer.next = list2
+            pointer.next = lst2
             lst2 = lst2.next
         pointer = pointer.next
 
-    if not list1:
+    if not lst1:
         pointer.next = lst2
     else:
         pointer.next = lst1
@@ -44,8 +44,23 @@ def merge_two_lists(lst1, lst2):
     return start.next
 
 
+# function that merges k sorted lists iteratively
+def mergeKListsIterative(lists):
+    if len(lists) == 0:
+        return None
+    elif len(lists) == 1:
+        return lists[0]
+    
+    sorted_list = lists[0]
+    
+    for l in lists[1:]:
+        sorted_list = merge_two_lists(sorted_list, l)
+        
+    return sorted_list
+
+
 list1 = arr_to_list([1, 4, 5])
 list2 = arr_to_list([1, 3, 4])
 list3 = arr_to_list([2, 6])
 
-print(list_to_arr(merge_two_lists(list1, list2)))
+print(list_to_arr(mergeKListsIterative([list1, list2, list3])))
