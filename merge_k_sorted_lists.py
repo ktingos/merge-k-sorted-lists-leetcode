@@ -59,14 +59,14 @@ def merge_k_lists_iterative(lists):
     return sorted_list
 
 
-def merge_k_lists_recursively(lists):
+def merge_k_lists_recursive(lists):
     """merges k sorted lists recursively"""
     if len(lists) == 0:
         return None
     elif len(lists) == 1:
         return lists[0]
 
-    return merge_k_lists_recursively(
+    return merge_k_lists_recursive(
         lists[2:] + [merge_two_lists(lists[0], lists[1])]
     )
 
@@ -76,4 +76,4 @@ list2 = arr_to_list([1, 3, 4])
 list3 = arr_to_list([2, 6])
 
 # print(list_to_arr(merge_k_lists_iterative([list1, list2, list3])))
-print(list_to_arr(merge_k_lists_recursively([list1, list2, list3])))
+print(list_to_arr(merge_k_lists_recursive([list1, list2, list3])))
