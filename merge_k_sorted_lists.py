@@ -4,6 +4,18 @@ class ListNode:
         self.val = val
         self.next = next
 
+# function that converts an array to a list
+def arrToList(arr):
+    if len(arr) == 0:
+        return None
+    return ListNode(arr[0],arrToList(arr[1:]))
+
+# function that converts a list to an array
+def listToArr(l):
+    if l is None:
+        return []
+    return [l.val] + listToArr(l.next)
+
 # function that merges two sorted lists
 def mergeTwoLists(l1, l2):
     start = ListNode()
