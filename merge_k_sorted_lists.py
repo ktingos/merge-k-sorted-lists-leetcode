@@ -44,18 +44,18 @@ def merge_two_lists(lst1, lst2):
     return start.next
 
 
-# function that merges k sorted lists iteratively
-def mergeKListsIterative(lists):
+def merge_k_lists_iterative(lists):
+    """merges k sorted lists iteratively"""
     if len(lists) == 0:
         return None
     elif len(lists) == 1:
         return lists[0]
-    
+
     sorted_list = lists[0]
-    
-    for l in lists[1:]:
-        sorted_list = merge_two_lists(sorted_list, l)
-        
+
+    for lst in lists[1:]:
+        sorted_list = merge_two_lists(sorted_list, lst)
+
     return sorted_list
 
 
@@ -63,4 +63,4 @@ list1 = arr_to_list([1, 4, 5])
 list2 = arr_to_list([1, 3, 4])
 list3 = arr_to_list([2, 6])
 
-print(list_to_arr(mergeKListsIterative([list1, list2, list3])))
+print(list_to_arr(merge_k_lists_iterative([list1, list2, list3])))
