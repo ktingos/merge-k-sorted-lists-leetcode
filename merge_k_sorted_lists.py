@@ -71,9 +71,9 @@ def merge_k_lists_recursive(lists):
     )
 
 
-list1 = arr_to_list([1, 4, 5])
-list2 = arr_to_list([1, 3, 4])
-list3 = arr_to_list([2, 6])
+# list1 = arr_to_list([1, 4, 5])
+# list2 = arr_to_list([1, 3, 4])
+# list3 = arr_to_list([2, 6])
 
 # print(list_to_arr(merge_k_lists_iterative([list1, list2, list3])))
-print(list_to_arr(merge_k_lists_recursive([list1, list2, list3])))
+# print(list_to_arr(merge_k_lists_recursive([list1, list2, list3])))
