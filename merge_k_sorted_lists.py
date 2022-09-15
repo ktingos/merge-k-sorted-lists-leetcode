@@ -66,7 +66,9 @@ def merge_k_lists_recursively(lists):
     elif len(lists) == 1:
         return lists[0]
 
-    return merge_k_lists_recursively(lists[2:] + [merge_two_lists(lists[0],lists[1])])
+    return merge_k_lists_recursively(
+        lists[2:] + [merge_two_lists(lists[0], lists[1])]
+    )
 
 
 list1 = arr_to_list([1, 4, 5])
