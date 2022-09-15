@@ -1,0 +1,6 @@
+name: cs197asgmt1
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+prefix: /Users/kostastingos/miniconda/envs/cs197asgmt1
