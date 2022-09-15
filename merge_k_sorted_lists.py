@@ -28,6 +28,7 @@ def mergeTwoLists(l1, l2):
         else:
             pointer.next = l2
             l2 = l2.next
+        pointer = pointer.next
         
     if not l1:
         pointer.next = l2
@@ -35,3 +36,9 @@ def mergeTwoLists(l1, l2):
         pointer.next = l1
         
     return start.next
+
+list1 = arrToList([1,4,5])
+list2 = arrToList([1,3,4])
+list3 = arrToList([2,6])
+
+print(listToArr(mergeTwoLists(list1,list2)))
